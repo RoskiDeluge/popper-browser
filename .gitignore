@@ -1,0 +1,17 @@
+node_modules/
+dist/
+dist-ssr/
+out/
+
+target/
+src-tauri/target/
+
+.DS_Store
+
+.env
+.env.*
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
