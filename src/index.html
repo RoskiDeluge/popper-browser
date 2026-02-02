@@ -2,38 +2,76 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tauri App</title>
+    <title>Popper Browser</title>
     <script type="module" src="/main.js" defer></script>
   </head>
 
   <body>
-    <main class="container">
-      <h1>Welcome to Tauri</h1>
+    <main data-ui="frame" data-pad="md" data-gap="sm" data-tone="dark">
+      <popper-bar data-gap="xs" data-justify="between">
+        <div data-ui="row" data-gap="xs" data-align="center">
+          <div data-ui="badge" data-ink="bright">POPPER</div>
+          <popper-label data-ink="dim">BUILD 0.1</popper-label>
+        </div>
+        <div data-ui="row" data-gap="xs" data-align="center" data-justify="end">
+          <popper-label data-ink="dim">NET</popper-label>
+          <popper-label data-ink="bright">LOCAL</popper-label>
+        </div>
+      </popper-bar>
 
-      <div class="row">
-        <a href="https://tauri.app" target="_blank">
-          <img src="/assets/tauri.svg" class="logo tauri" alt="Tauri logo" />
-        </a>
-        <a
-          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-          target="_blank"
-        >
-          <img
-            src="/assets/javascript.svg"
-            class="logo vanilla"
-            alt="JavaScript logo"
+      <popper-bar data-gap="xs" data-border="thin">
+        <button data-ui="btn" data-size="sm" id="nav-back" aria-label="Back">
+          ◀
+        </button>
+        <button data-ui="btn" data-size="sm" id="nav-forward" aria-label="Forward">
+          ▶
+        </button>
+        <button data-ui="btn" data-size="sm" id="nav-reload" aria-label="Reload">
+          ⟳
+        </button>
+        <form id="nav-form" data-ui="row" data-gap="xs">
+          <input
+            id="nav-input"
+            data-ui="field"
+            data-size="md"
+            data-width="lg"
+            data-round="sm"
+            type="text"
+            spellcheck="false"
+            autocomplete="off"
+            aria-label="Address"
+            value="about:home"
           />
-        </a>
-      </div>
-      <p>Click on the Tauri logo to learn more about the framework</p>
+          <button data-ui="btn" data-size="sm" type="submit">GO</button>
+        </form>
+      </popper-bar>
 
-      <form class="row" id="greet-form">
-        <input id="greet-input" placeholder="Enter a name..." />
-        <button type="submit">Greet</button>
-      </form>
-      <p id="greet-msg"></p>
+      <section
+        data-ui="screen"
+        data-tone="light"
+        data-pad="sm"
+        data-border="heavy"
+        data-round="sm"
+      >
+        <iframe
+          id="view"
+          data-ui="view"
+          title="Popper Browser View"
+          sandbox="allow-scripts allow-forms allow-same-origin"
+        ></iframe>
+      </section>
+
+      <popper-bar data-gap="xs" data-justify="between">
+        <div data-ui="row" data-gap="xs" data-align="center">
+          <popper-label data-ink="dim">STATUS</popper-label>
+          <popper-label id="status" data-ink="bright">READY</popper-label>
+        </div>
+        <div data-ui="row" data-gap="xs" data-align="center" data-justify="end">
+          <popper-label data-ink="dim">MODE</popper-label>
+          <popper-label data-ink="bright">ATTRIBUTE-ONLY</popper-label>
+        </div>
+      </popper-bar>
     </main>
   </body>
 </html>
